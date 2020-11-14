@@ -1,4 +1,4 @@
-const template = document.createElement('template');
+const template = document.createElement('template')
 const style = `
 <style>
   :host {
@@ -38,19 +38,19 @@ const style = `
     border-bottom-color: var(--active-border-bottom-color);
     color: var(--active-color);
   }
-</style>`;
+</style>`
 
 template.innerHTML = `
   <slot/>
   ${style}
-`;
+`
 
 class Tab extends HTMLElement {
   constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    super()
+    this.attachShadow({ mode: 'open' })
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
   }
 }
 
-customElements.define('bwc-tab', Tab);
+customElements.define('bwc-tab', Tab)

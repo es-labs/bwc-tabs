@@ -1,2 +1,2 @@
-import '../src/bwc-tab.js';
-import '../src/bwc-tabs.js';
+import '../src/bwc-tab.js'
+import '../src/bwc-tabs.js'

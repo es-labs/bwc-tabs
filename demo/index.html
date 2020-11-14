@@ -1,10 +1,19 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <script type="module" src="./index.mjs"></script>
     <style>
+      body {
+        font-family: "Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
       bwc-tabs {
         margin: 15px 20px;
+      }
+
+      bwc-tab .icon:first-child {
+        margin-right: .5em;
       }
     </style>
   </head>
@@ -12,100 +21,308 @@
     <section>
       <h3>Default</h3>
       <bwc-tabs>
-        <bwc-tab>Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
     </section>
 
     <section>
       <h3>Alignment</h3>
       <bwc-tabs class="is-right">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-centered">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
     </section>
 
     <section>
       <h3>Sizes</h3>
       <bwc-tabs class="is-small">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-medium">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-large">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
     </section>
 
     <section>
       <h3>Styles</h3>
       <bwc-tabs class="is-boxed">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-toggle">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-toggle is-toggle-rounded">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-fullwidth">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
     </section>
 
     <section>
       <h3>Combining</h3>
       <bwc-tabs class="is-centered is-boxed">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-toggle is-fullwidth">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-centered is-boxed is-medium">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
 
       <bwc-tabs class="is-toggle is-fullwidth is-large">
-        <bwc-tab class="is-active">Tab 1</bwc-tab>
-        <bwc-tab>Tab 2</bwc-tab>
-        <bwc-tab>Tab 3</bwc-tab>
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
       </bwc-tabs>
+    </section>
+
+    <section>
+      <h3>Tab with Content</h3>
+      <bwc-tabs class="is-toggle is-fullwidth is-large">
+        <bwc-tab class="is-active">
+          <span class="icon is-small"><i class="fas fa-image"></i></span>
+          <span>Pictures</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-music"></i></span>
+          <span>Music</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-film"></i></span>
+          <span>Videos</span>
+        </bwc-tab>
+        <bwc-tab>
+          <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+          <span>Documents</span>
+        </bwc-tab>
+        <section slot="panel">Pictures Content</section>
+        <section slot="panel">Music Content</section>
+        <section slot="panel">Videos Content</section>
+        <section slot="panel">Documents Content</section>
+      </bwc-tabs>      
     </section>
   </body>
 </html>

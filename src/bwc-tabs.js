@@ -1,16 +1,12 @@
-/**
- * @todo Dispatch event on selected tab changed
- * @todo Implement icon
- * @todo Implement tab panel
- */
-const template = document.createElement('template');
+const activeClass = 'is-active'
+const template = document.createElement('template')
 const style = `
 <style>
   :host {
     --border-bottom-color: #dbdbdb;
     --border-bottom-style: solid;
     --border-bottom-width: 1px;
-    
+
     --boxed-tab-border: 1px solid transparent;
     --boxed-tab-radius: 4px 4px 0 0;
     --boxed-tab-hover-background-color: whitesmoke;
@@ -18,7 +14,7 @@ const style = `
     --boxed-tab-active-background-color: #fff;
     --boxed-tab-active-border-color: #dbdbdb;
     --boxed-tab-active-border-bottom-color: transparent;
-    
+
     --toggle-tab-border-color: #dbdbdb;
     --toggle-tab-border-style: solid;
     --toggle-tab-border-width: 1px;
@@ -29,7 +25,7 @@ const style = `
     --toggle-tab-active-border-color: #3273dc;
     --toggle-tab-active-color: #fff;
   }
-  
+
   :host {
     display: block;
     position: relative;
@@ -138,6 +134,7 @@ const style = `
     -webkit-overflow-scrolling: touch;
     align-items: stretch;
     display: flex;
+    flex-direction: column;
     font-size: 1rem;
     justify-content: space-between;
     overflow: hidden;
@@ -155,34 +152,49 @@ const style = `
     flex-shrink: 0;
     justify-content: flex-start;
   }
-</style>`;
+
+  .panel-list ::slotted(*) {
+    display: none;
+  }
+
+  .panel-list ::slotted(*.is-active) {
+    display: block;
+  }
+</style>`
 
 template.innerHTML = `
   <div class="tabs">
     <div class="tab-list">
       <slot />
     </div>
+    <div class="panel-list">
+      <slot name="panel"/>
+    </div>
   </div>
   ${style}
-`;
+`
 
 class Tabs extends HTMLElement {
   constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  
-    this._tabsSlot = this.shadowRoot.querySelector('.tab-list slot');
-  
-    this._onTabSlotClick = this._onTabSlotClick.bind(this);
+    super()
+    this.attachShadow({ mode: 'open' })
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+
+    this._tabsSlot = this.shadowRoot.querySelector('.tab-list slot')
+    this._panelsSlot = this.shadowRoot.querySelector('.panel-list slot')
+
+    this._onTabSlotClick = this._onTabSlotClick.bind(this)
+
+    this._selectedIndex = this.getSelectedIndex()
   }
   
   connectedCallback() {
-    this._setListeners(true);
+    this.selectTab(this._selectedIndex)
+    this._setListeners(true)
   }
   
   disconnectedCallback() {
-    this._setListeners(false);
+    this._setListeners(false)
   }
   
   /**
@@ -191,17 +203,41 @@ class Tabs extends HTMLElement {
    * @returns {Array}
    **/
   get tabs() {
-    return [...this._tabsSlot.assignedElements()];
+    return [...this._tabsSlot.assignedElements()]
+  }
+
+  /**
+   * Array of tab panels
+   * @readonly
+   * @returns {Array}
+   **/
+  get panels() {
+    return [...this._panelsSlot.assignedElements()]
   }
   
   _setListeners(enable) {
-    const fnName = enable ? 'addEventListener' : 'removeEventListener';
-    this._tabsSlot[fnName]('click', this._onTabSlotClick);
+    const fnName = enable ? 'addEventListener' : 'removeEventListener'
+    this._tabsSlot[fnName]('click', this._onTabSlotClick)
   }
   
   _onTabSlotClick(e) {
-    const tab = e.target.closest('bwc-tab');
-    this.selectTab(this.tabs.indexOf(tab));
+    const tab = e.target.closest('bwc-tab')
+    this.selectTab(this.tabs.indexOf(tab))
+    this._tabChange()
+  }
+
+  _tabChange() {
+    const event = new CustomEvent('change', { detail: this._selectedIndex })
+    this.dispatchEvent(event)
+  }
+
+  /**
+   * Gets selected tab index
+   * @returns {number} return tab index
+   **/
+  getSelectedIndex() {
+    return this.tabs
+      .findIndex(tab => tab.classList.contains(activeClass))
   }
   
   /**
@@ -209,12 +245,22 @@ class Tabs extends HTMLElement {
    * @param {Number} index the tab's position
    **/
   selectTab(index) {
-    this.tabs.forEach((tab, i) => {
-      const fnName = index === i ? 'add' : 'remove';
-      tab.classList[fnName]('is-active');
-    });
+    if (!~index) {
+      return
+    }
+
+    const tabs = this.tabs
+    const panels = this.panels
+
+    if (!!~this._selectedIndex) {
+      tabs[this._selectedIndex].classList.remove(activeClass)
+      panels[this._selectedIndex] && panels[this._selectedIndex].classList.remove(activeClass)
+    }
+    tabs[index].classList.add(activeClass)
+    panels[index] && panels[index].classList.add(activeClass)
+    this._selectedIndex = index
   }
 }
 
-customElements.define('bwc-tabs', Tabs);
+customElements.define('bwc-tabs', Tabs)
   
